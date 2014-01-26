@@ -10,8 +10,12 @@
 #import "ZBarSDK.h"
 
 @interface ZbarcodeScanner : CDVPlugin <ZBarReaderViewDelegate, ZBarReaderDelegate>
+{
+    ZBarReaderViewController *_reader;
+}
 
 @property (nonatomic, copy) NSString *callbackId;
+@property (nonatomic, retain) ZBarReaderViewController *reader;
 
 - (void)scan:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 
